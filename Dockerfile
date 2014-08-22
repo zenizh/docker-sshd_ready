@@ -3,6 +3,9 @@ FROM centos:centos6
 MAINTAINER kami <kami30k@gmail.com>
 
 RUN yum install -y openssh-server
+RUN yum install -y sudo
+RUN yum install -y which
+RUN yum install -y tar
 
 RUN mkdir -p /root/.ssh
 RUN chmod 700 /root/.ssh
