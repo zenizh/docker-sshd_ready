@@ -22,4 +22,4 @@ RUN /etc/init.d/sshd stop
 
 EXPOSE 22
 
-CMD /usr/sbin/sshd -D
+CMD /etc/init.d/sshd start && /bin/bash
