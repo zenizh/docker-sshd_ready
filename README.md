@@ -28,8 +28,11 @@ $ sudo docker build -t {image_name} .
 
 ### 4. コンテナを実行
 
+`--privileged`オプションは、これがないと`iptables`などいくつかの設定がうまくいかないので設定しています。
+詳しくは[ドキュメント](http://docs.docker.com/reference/run/#runtime-privilege-linux-capabilities-and-lxc-configuration)を参照してください。
+
 ```
-$ sudo docker run -d -p 22 --name {container_name} {image_name}
+$ sudo docker run -d -p 22 -t --privileged --name {container_name} {image_name}
 ```
 
 ### 5. ssh接続
